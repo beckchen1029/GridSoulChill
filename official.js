@@ -35,9 +35,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 ScrollReveal().reveal(".headline");
-
-
-
-
-// 如果頁面有動態加載的內容，可能需要在加載後重新刷新 AOS
-// AOS.refresh();
