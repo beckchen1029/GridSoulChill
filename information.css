@@ -124,14 +124,83 @@ a {
   display: grid;
   width: 95%;
   max-width: 95%;
-  margin: 10px auto;
+  margin: 170px auto;
   justify-content: center;
   align-items: center;
   background-color: #1c2534;
 }
 
+.row-overseas,
+.row-N-taiwan {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  
+}
+.row-overseas{
+grid-template-areas:
+    "title title title title"
+    "store store . ."
+    "image image . ."
+    "icons icons . .";
+}
+.row-N-taiwan{
+  grid-template-areas:
+      "title title title title"
+      "store store . ."
+      "image image . ."
+      "icons icons . .";
+}
+
+
+.col-title {
+  grid-area: title;
+}
+
+.col-store {
+  grid-area: store;
+}
+
+.col-img {
+  grid-area: image;
+}
+
+.col-icons {
+  grid-area: icons;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.col-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.col-icons a:hover {
+  background-color: #e0e0e0;
+}
+
+@media (min-width: 768px) {
+  .row-overseas {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "title title title title"
+      "store store . ."
+      "image image . ."
+      "icons icons . .";
+  }
+}
+
 
 h1,
+h2,
 h4,
 h5,
 p {
@@ -179,7 +248,7 @@ p {
 }
 
 img {
-  max-width: 100%;
+  max-width: 500px;
   max-height: auto;
 }
 
@@ -453,11 +522,13 @@ img {
   }
 }
 
-/* 桌面螢幕 */
+/* 桌面螢幕  */
 @media (min-width: 1024px) {
 
   .container {
     width: 95%;
+    margin: 200px 0px;
+
   }
 
   .row-ninth {

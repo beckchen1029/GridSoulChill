@@ -14,6 +14,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  margin-top: 170px;
   overflow-x: hidden;
   font-size: 16px;
   font-family: Josefin Sans;
@@ -569,6 +570,24 @@ img {
 
 
 @media (max-width: 480px) {
+
+  body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-size: 16px;
+      font-family: Josefin Sans;
+      color: #fff;
+      background-color: #1c2534;
+      box-sizing: border-box;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
   .container {
     width: 100%;
     padding: 0;
@@ -794,6 +813,23 @@ img {
 
 /* 桌面螢幕 */
 @media (min-width: 1024px) {
+
+  body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 190px;
+      padding: 0;
+      overflow-x: hidden;
+      font-size: 16px;
+      font-family: Josefin Sans;
+      color: #fff;
+      background-color: #1c2534;
+      box-sizing: border-box;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
 
   .container {
     width: 95%;
