@@ -134,21 +134,28 @@ a {
 .row-N-taiwan {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  
+
 }
-.row-overseas{
-grid-template-areas:
+
+.row-overseas {
+  gap: 30px;
+  grid-template-areas:
     "title title title title"
     "store store . ."
     "image image . ."
     "icons icons . .";
 }
-.row-N-taiwan{
+
+.row-N-taiwan {
+  gap: 30px;
   grid-template-areas:
-      "title title title title"
-      "store store . ."
-      "image image . ."
-      "icons icons . .";
+    "title title title title"
+    "db db lj lj"
+    "db-image db-image lj-image lj-image"
+    "db-icons db-icons lj-icons lj-icons "
+    "st st . ."
+    "st-image st-image . ."
+    "st-icons st-icons . .";
 }
 
 
@@ -160,8 +167,32 @@ grid-template-areas:
   grid-area: store;
 }
 
+.col-db {
+  grid-area: db
+}
+
+.col-lj {
+  grid-area: lj
+}
+
+.col-st {
+  grid-area: st
+}
+
 .col-img {
   grid-area: image;
+}
+
+.col-db-img {
+  grid-area: db-image;
+}
+
+.col-lj-img {
+  grid-area: lj-image;
+}
+
+.col-st-img {
+  grid-area: st-image;
 }
 
 .col-icons {
@@ -169,7 +200,31 @@ grid-template-areas:
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
+}
+
+.col-db-icons {
+  grid-area: db-icons;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.col-lj-icons {
+  grid-area: lj-icons;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.col-st-icons {
+  grid-area: st-icons;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 .col-icons a {
@@ -185,6 +240,13 @@ grid-template-areas:
 
 .col-icons a:hover {
   background-color: #e0e0e0;
+}
+
+.icon-link i,
+.icon-link img {
+  font-size: 70px;
+  width: 70px;
+  height: auto;
 }
 
 @media (min-width: 768px) {
