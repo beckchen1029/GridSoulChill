@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -20,21 +20,6 @@ body {
   -ms-text-size-adjust: 100%;
 }
 
-section {
-  max-width: 100%;
-}
-
-.firSec {
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding-top: 80px;
-  background-size: cover;
-  background-position: center;
-  box-sizing: border-box;
-  text-decoration: none;
-}
-
 .container-fst {
   max-width: 95%;
   margin: 0 auto;
@@ -48,6 +33,21 @@ section {
   padding: 0;
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 999;
+}
+
+.navbar {
+  height: 120px;
+  transition: height 0.3s, line-height 0.3s;
+}
+
+.img-logo {
+  height: 100%;
+  max-height: 105px;
+  transition: transform 0.3s ease;
+}
+
+.img-logo:hover {
+  transform: scale(1.05);
 }
 
 a {
@@ -120,6 +120,8 @@ a {
   text-decoration: none;
   transform: scale(1.1);
 }
+
+
 
 .carousel {
   width: 100%;
@@ -491,14 +493,6 @@ img {
   max-height: auto;
 }
 
-.img-logo {
-  width: 50%;
-  max-height: auto;
-  transition: transform 0.3s ease;
-}
-.img-logo:hover {
-    transform: scale(1.05);
-}
 .row-seventh-img {
   aspect-ratio: 1 / 1;
   width: 100%;
@@ -597,7 +591,8 @@ img {
 
   .navbar-collapse {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    background-color: white;
   }
 
   .navbar-toggler {
@@ -725,10 +720,14 @@ img {
   }
 
   .img-logo {
-    width: 20%;
-    max-height: auto;
+    height: 50%;
+    max-height: 50px;
+    transition: transform 0.3s ease;
   }
 
+  .img-logo:hover {
+    transform: scale(1.05);
+  }
 
   footer {
     max-width: 100%;
@@ -738,11 +737,17 @@ img {
 }
 
 /* 平板螢幕 */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 539px) and (max-width: 1024px) {
 
   .container {
     width: 100%;
     padding: 0;
+  }
+
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-start;
+    background-color: white;
   }
 
   .row-fst {
@@ -806,6 +811,16 @@ img {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .img-logo {
+    height: 70%;
+    max-height: 50px;
+    transition: transform 0.3s ease;
+  }
+
+  .img-logo:hover {
+    transform: scale(1.05);
+  }
 }
 
 /* 桌面螢幕 */
@@ -865,4 +880,18 @@ img {
     margin-left: auto;
     margin-right: auto;
   }
+    .navbar {
+      height: 120px;
+      transition: height 0.3s, line-height 0.3s;
+    }
+  
+    .img-logo {
+      height: 90%;
+      max-height: 90px;
+      transition: transform 0.3s ease;
+    }
+  
+    .img-logo:hover {
+      transform: scale(1.05);
+    }
 }
