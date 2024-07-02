@@ -129,6 +129,22 @@ a {
   background-color: #1c2534;
 }
 
+.row-ninth {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+  border-radius: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: #2d88bbff;
+  padding: 0;
+}
+
 .row-overseas,
 .row-N-taiwan,
 .row-M-taiwan,
@@ -310,9 +326,19 @@ a {
 
 @media (max-width: 767px) {
 
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
   .navbar {
     height: 60px;
     transition: height 0.3s, line-height 0.3s;
+  }
+
+  .navbar-collapse {
+    justify-content: flex-start;
+    background-color: var(--text-color);
   }
 
   .general-img {
@@ -344,6 +370,24 @@ a {
 
   .img-logo:hover {
     transform: scale(1.05);
+  }
+
+
+   .row-ninth {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    position: fixed;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    border-radius: 0;
+    flex-wrap: wrap;
+    background-color: var(--secondary-color);
+    gap: 5px;
   }
 
   .row-overseas,
@@ -395,6 +439,7 @@ a {
   }
 
   .row-E-taiwan {
+    margin: 0;
     grid-template-areas:
       "title"
       "tt"
@@ -402,25 +447,6 @@ a {
       "tt-icons";
   }
 }
-
-.row-ninth {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  position: fixed;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0;
-  border-radius: 0;
-  background-color: var(--secondary-color);
-  gap: 5px;
-}
-
-
-
 
 h1,
 h2,
@@ -470,61 +496,6 @@ p {
   line-height: 60px;
 }
 
-.btn {
-  display: inline-block;
-  align-content: center;
-  margin: 10px;
-  padding: 10px 42px;
-  border: none;
-  border-radius: 100px;
-  font-family: Josefin Sans;
-  font-size: 20px;
-  font-weight: 600;
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-  line-height: 40px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.btn-blue {
-  color: #ffffffff;
-  background-color: #2d88bbff;
-}
-
-.btn-org {
-  color: #ffffffff;
-  background-color: #f29c0c;
-}
-
-.btn:hover {
-  background-color: black;
-  transform: scale(1.1);
-  text-decoration: none;
-}
-
-.btn-blue:hover {
-  color: #0056b3;
-}
-
-.btn-org:hover {
-  color: #ff6600;
-}
-
-.row-ninth {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 5px;
-  border-radius: 0;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  background-color: #2d88bbff;
-  padding: 0;
-}
 
 .row-ninth-col {
   margin: 5px;
@@ -533,14 +504,13 @@ p {
 
 .row-ninth .row-ninth-col a,
 .row-ninth .row-ninth-col a i {
-  margin: 20px;
   font-size: 2rem;
   color: #ffffff !important;
   transition: color 0.3s ease-in-out;
 }
 
 .row-ninth .row-ninth-col a:hover,
-.row-ninth .row-ninth-col a:hover i {
+.row-ninth .row-ninth-col a i:hover {
   color: #f29c0c !important;
 }
 
@@ -558,33 +528,6 @@ p {
     background-color: white;
   }
 
-  .row-fst {
-    column-gap: 10px;
-  }
-
-  .row-sixth {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    max-width: 100%;
-    column-gap: 5px;
-  }
-
-  .row-sixth-col-1 {
-    grid-column: 1 / 2;
-  }
-
-  .row-sixth-col-2 {
-    grid-column: 2 / 3;
-  }
-
-  .row-sixth-col-3 {
-    grid-column: 3 / 4;
-  }
-
-  .row-sixth-col-4 {
-    grid-column: 4/ 5;
-  }
-
   .row-ninth {
     position: fixed;
     bottom: 0;
@@ -601,105 +544,118 @@ p {
     padding: 0;
   }
 
-  h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 60px;
-  }
-
-  p {
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 60px;
-  }
-
-  .btn {
-    display: block;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .img-logo {
-    height: 70%;
-    max-height: 50px;
-    transition: transform 0.3s ease;
-  }
-
-  .img-logo:hover {
-    transform: scale(1.05);
-  }
-}
-
-/* 桌面螢幕 */
-@media (min-width: 1024px) {
-
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 190px;
-    padding: 0;
-    overflow-x: hidden;
-    font-size: 16px;
-    font-family: Josefin Sans;
-    color: #fff;
-    background-color: #1c2534;
-    box-sizing: border-box;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-  }
-
-  .container {
-    width: 95%;
-  }
-
-  .row-ninth {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  .row-overseas,
+  .row-N-taiwan,
+  .row-M-taiwan,
+  .row-S-taiwan,
+  .row-E-taiwan {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 5px;
-    border-radius: 0;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    background-color: #2d88bbff;
-    padding: 0;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
   }
 
-  h4 {
-    font-size: 1.5vw;
-    padding: 0.4em 1em;
-    max-width: 100%;
-    min-width: 150px;
-    margin: 0px;
-    border-radius: 100px;
-    color: #ffffff;
-    line-height: 1.3;
+  .row-overseas {
+    grid-template-areas:
+      "title"
+      "store"
+      "image"
+      "icons";
   }
 
-  .btn {
-    display: block;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  .row-N-taiwan {
+    grid-template-areas:
+      "title"
+      "db"
+      "db-image"
+      "db-icons"
+      "lj"
+      "lj-image"
+      "lj-icons"
+      "st"
+      "st-image"
+      "st-icons";
   }
 
-  .navbar {
-    height: 120px;
-    transition: height 0.3s, line-height 0.3s;
+  .row-M-taiwan {
+    grid-template-areas:
+      "title"
+      "ch"
+      "ch-image"
+      "ch-icons";
   }
 
-  .img-logo {
-    height: 90%;
-    transition: transform 0.3s ease;
+  .row-S-taiwan {
+    grid-template-areas:
+      "title"
+      "fc"
+      "fc-image"
+      "fc-icons";
   }
 
-  .img-logo:hover {
-    transform: scale(1.05);
+  .row-E-taiwan {
+    margin: 0;
+    grid-template-areas:
+      "title"
+      "tt"
+      "tt-image"
+      "tt-icons";
+  }
+
+  /* 桌面螢幕 */
+  @media (min-width: 1024px) {
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 190px;
+      padding: 0;
+      overflow-x: hidden;
+      font-size: 16px;
+      font-family: Josefin Sans;
+      color: #fff;
+      background-color: #1c2534;
+      box-sizing: border-box;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+    .container {
+      width: 95%;
+    }
+
+
+    h4 {
+      font-size: 1.5vw;
+      padding: 0.4em 1em;
+      max-width: 100%;
+      min-width: 150px;
+      margin: 0px;
+      border-radius: 100px;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .navbar {
+      height: 120px;
+      transition: height 0.3s, line-height 0.3s;
+    }
+
+    .img-logo {
+      height: 90%;
+      transition: transform 0.3s ease;
+    }
+
+    .img-logo:hover {
+      transform: scale(1.05);
+    }
   }
 }
