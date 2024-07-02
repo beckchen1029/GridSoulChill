@@ -19,7 +19,6 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  margin: 100px 0;
   overflow-x: hidden;
   font-size: 16px;
   font-family: var(--font-family);
@@ -31,7 +30,7 @@ body {
 
 .container-fst {
   max-width: 95%;
-  margin: 0 auto;
+  margin: 10 auto;
 }
 
 .header {
@@ -49,6 +48,17 @@ body {
   transition: height 0.3s, line-height 0.3s;
 }
 
+
+.img-logo {
+  height: 100%;
+  max-height: 105px;
+  transition: transform 0.3s ease;
+}
+
+.img-logo:hover {
+  transform: scale(1.05);
+}
+
 .general-img {
   aspect-ratio: 1 / 1;
   max-width: 500px;
@@ -60,16 +70,6 @@ body {
 }
 
 .general-img:hover {
-  transform: scale(1.05);
-}
-
-.img-logo {
-  height: 100%;
-  max-height: 105px;
-  transition: transform 0.3s ease;
-}
-
-.img-logo:hover {
   transform: scale(1.05);
 }
 
@@ -130,19 +130,35 @@ a {
 }
 
 .row-ninth {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 5px;
-  border-radius: 0;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  background-color: #2d88bbff;
   padding: 0;
+  border-radius: 0;
+  background-color: var(--secondary-color);
+  gap: 5px;
+}
+
+.row-ninth-col {
+  margin: 5px;
+  text-align: center;
+}
+
+.row-ninth .row-ninth-col a,
+.row-ninth .row-ninth-col a i {
+  font-size: 2rem;
+  color: #ffffff !important;
+  transition: color 0.3s ease-in-out;
+}
+
+.row-ninth .row-ninth-col a:hover,
+.row-ninth .row-ninth-col a i:hover {
+  color: #f29c0c !important;
 }
 
 .row-overseas,
@@ -321,7 +337,52 @@ a {
   border-radius: 100px;
 }
 
+h1,
+h4,
+h5,
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: var(--font-family);
+  white-space: nowrap;
+}
 
+h1 {
+  margin: 10px;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: 700;
+}
+
+h4 {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: 700;
+  padding: 0.4em 1em;
+  max-width: 100%;
+  min-width: 150px;
+  margin: 0;
+  color: var(--text-color);
+  line-height: 1.3;
+}
+
+h5 {
+  font-size: 1.5vw;
+  padding: 0.4em 1em;
+  max-width: 90%;
+  min-width: 150px;
+  margin: 0;
+  border-radius: 100px;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  line-height: 1.3;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 60px;
+}
 
 
 @media (max-width: 767px) {
@@ -331,14 +392,23 @@ a {
     padding: 10px;
   }
 
+  .header {
+    width: auto;
+  }
+
   .navbar {
     height: 60px;
+    width: 100%;
     transition: height 0.3s, line-height 0.3s;
   }
 
   .navbar-collapse {
     justify-content: flex-start;
     background-color: var(--text-color);
+  }
+
+  .navbar-toggler {
+    margin-right: 20px;
   }
 
   .general-img {
@@ -372,12 +442,10 @@ a {
     transform: scale(1.05);
   }
 
-
-   .row-ninth {
+  .row-ninth {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     position: fixed;
-    width: 100vw;
     justify-content: center;
     align-items: center;
     left: 0;
@@ -388,6 +456,71 @@ a {
     flex-wrap: wrap;
     background-color: var(--secondary-color);
     gap: 5px;
+  }
+
+  .row-ninth-col {
+    margin: 5px;
+    text-align: center;
+  }
+
+  .row-ninth .row-ninth-col a,
+  .row-ninth .row-ninth-col a i {
+    font-size: 2rem;
+    color: #ffffff !important;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .row-ninth .row-ninth-col a:hover,
+  .row-ninth .row-ninth-col a i:hover {
+    color: #f29c0c !important;
+  }
+
+  h1,
+  h2,
+  h4,
+  h5,
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Josefin Sans;
+    white-space: nowrap;
+  }
+
+  h1 {
+    margin: 10px;
+    font-size: clamp(3rem, 3vw, 5rem);
+    font-weight: 700;
+  }
+
+  h4 {
+    font-size: clamp(2.5rem, 5vw, 3rem);
+    font-weight: 700;
+    padding: 0.4em 1em;
+    max-width: 100%;
+    min-width: 150px;
+    margin: 0px;
+    color: #ffffff;
+    line-height: 1.3;
+  }
+
+  h5 {
+    font-size: 1.5vw;
+    padding: 0.4em 1em;
+    max-width: 90%;
+    min-width: 150px;
+    margin: 0px;
+    border-radius: 100px;
+    color: #ffffff;
+    background-color: #cc6600;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 60px;
   }
 
   .row-overseas,
@@ -401,6 +534,7 @@ a {
   }
 
   .row-overseas {
+    margin: 30px 0;
     grid-template-areas:
       "title"
       "store"
@@ -448,72 +582,6 @@ a {
   }
 }
 
-h1,
-h2,
-h4,
-h5,
-p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-family: Josefin Sans;
-  white-space: nowrap;
-}
-
-h1 {
-  margin: 10px;
-  font-size: clamp(3rem, 3vw, 5rem);
-  font-weight: 700;
-}
-
-h4 {
-  font-size: clamp(2.5rem, 5vw, 3rem);
-  font-weight: 700;
-  padding: 0.4em 1em;
-  max-width: 100%;
-  min-width: 150px;
-  margin: 0px;
-  color: #ffffff;
-  line-height: 1.3;
-}
-
-h5 {
-  font-size: 1.5vw;
-  padding: 0.4em 1em;
-  max-width: 90%;
-  min-width: 150px;
-  margin: 0px;
-  border-radius: 100px;
-  color: #ffffff;
-  background-color: #cc6600;
-  line-height: 1.3;
-}
-
-p {
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 60px;
-}
-
-
-.row-ninth-col {
-  margin: 5px;
-  text-align: center;
-}
-
-.row-ninth .row-ninth-col a,
-.row-ninth .row-ninth-col a i {
-  font-size: 2rem;
-  color: #ffffff !important;
-  transition: color 0.3s ease-in-out;
-}
-
-.row-ninth .row-ninth-col a:hover,
-.row-ninth .row-ninth-col a i:hover {
-  color: #f29c0c !important;
-}
-
 /* 平板螢幕 */
 @media (min-width: 768px) and (max-width: 1024px) {
 
@@ -539,7 +607,6 @@ p {
     border-radius: 0;
     justify-content: center;
     align-items: center;
-    width: 100vw;
     background-color: #2d88bbff;
     padding: 0;
   }
@@ -625,6 +692,10 @@ p {
       width: 95%;
     }
 
+    .navbar {
+      height: 120px;
+      transition: height 0.3s, line-height 0.3s;
+    }
 
     h4 {
       font-size: 1.5vw;
@@ -637,17 +708,7 @@ p {
       line-height: 1.3;
     }
 
-    .btn {
-      display: block;
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
 
-    .navbar {
-      height: 120px;
-      transition: height 0.3s, line-height 0.3s;
-    }
 
     .img-logo {
       height: 90%;
