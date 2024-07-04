@@ -19,7 +19,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-
+  width: 100%;
   overflow-x: hidden;
   font-size: 16px;
   font-family: var(--font-family);
@@ -29,10 +29,11 @@ body {
   -ms-text-size-adjust: 100%;
 }
 
-.container-fst,
-.container {
-  max-width: 95%;
-  margin: 10px auto;
+.container,
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .header {
@@ -559,18 +560,31 @@ img {
     margin-top: 0;
   }
 
-  .header {
-    width: auto;
+  .container,
+  .container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 
-  .carousel {
-    margin-top: 120px;
+  .header {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
   .navbar {
     height: 60px;
     width: 100%;
-    transition: height 0.3s, line-height 0.3s;
+    max-width: 100%;
+  }
+
+  .navbar-brand {
+    padding: 0;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
   }
 
   .navbar-collapse {
@@ -580,6 +594,10 @@ img {
 
   .navbar-toggler {
     margin-right: 20px;
+  }
+
+  .carousel {
+    margin-top: 120px;
   }
 
   .row-fst,
@@ -706,15 +724,56 @@ img {
 /* 平板螢幕 */
 @media (min-width: 768px) and (max-width: 1024px) {
 
-  .container {
+  .container,
+  .container-fluid {
     width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+    .carousel {
+      max-width: 100%;
+      overflow: hidden;
+    }
+  
+    .carousel-item {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+  .header {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .navbar {
+    height: 120px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .navbar-brand {
     padding: 0;
   }
 
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
   .navbar-collapse {
-    display: flex;
     justify-content: flex-start;
-    background-color: white;
+    background-color: var(--text-color);
+  }
+
+  .navbar-toggler {
+    margin-right: 20px;
   }
 
   .row-sixth {
@@ -728,15 +787,15 @@ img {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     position: fixed;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
     padding: 0;
     border-radius: 0;
-    flex-wrap: wrap;
     background-color: var(--secondary-color);
     gap: 5px;
   }
@@ -776,23 +835,5 @@ img {
     margin-right: auto;
   }
 
-  .img-logo {
-    height: 70%;
-    max-height: 50px;
-    transition: transform 0.3s ease;
-  }
-
-  .img-logo:hover {
-    transform: scale(1.05);
-  }
 }
 
-/* 桌面螢幕 */
-@media (min-width: 1025px) {
-
-  .navbar {
-    height: 120px;
-    transition: height 0.3s, line-height 0.3s;
-  }
-
-}
