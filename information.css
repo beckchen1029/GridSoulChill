@@ -16,9 +16,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   margin: 0;
   padding: 0;
+  width: 100%;
   overflow-x: hidden;
   font-size: 16px;
   font-family: var(--font-family);
@@ -28,9 +28,11 @@ body {
   -ms-text-size-adjust: 100%;
 }
 
-.container-fst {
-  max-width: 95%;
-  margin: 10 auto;
+.container,
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .header {
@@ -121,9 +123,7 @@ a {
 
 .container {
   display: grid;
-  width: 100vw;
-  max-width: 95%;
-  margin: 20px auto;
+  width: 100%;
   justify-content: center;
   align-items: center;
   background-color: #1c2534;
@@ -387,9 +387,12 @@ p {
 
 @media (max-width: 767px) {
 
-  .container {
+  .container,
+  .container-fluid {
     width: 100%;
-    padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 30px;
   }
 
   .header {
@@ -400,6 +403,14 @@ p {
     height: 60px;
     width: 100%;
     transition: height 0.3s, line-height 0.3s;
+  }
+
+  .navbar-brand {
+    padding: 0;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
   }
 
   .navbar-collapse {
@@ -446,14 +457,14 @@ p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     position: fixed;
-    justify-content: center;
-    align-items: center;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     padding: 0;
     border-radius: 0;
-    flex-wrap: wrap;
     background-color: var(--secondary-color);
     gap: 5px;
   }
@@ -534,7 +545,7 @@ p {
   }
 
   .row-overseas {
-    margin: 30px 0;
+    margin: 120px 0 30px 0;
     grid-template-areas:
       "title"
       "store"
@@ -543,6 +554,7 @@ p {
   }
 
   .row-N-taiwan {
+    margin-top: 30px;
     grid-template-areas:
       "title"
       "db"
@@ -557,6 +569,7 @@ p {
   }
 
   .row-M-taiwan {
+    margin-top: 30px;
     grid-template-areas:
       "title"
       "ch"
@@ -565,6 +578,7 @@ p {
   }
 
   .row-S-taiwan {
+    margin-top: 30px;
     grid-template-areas:
       "title"
       "fc"
@@ -573,42 +587,70 @@ p {
   }
 
   .row-E-taiwan {
-    margin: 0;
+    margin-top: 30px;
     grid-template-areas:
       "title"
       "tt"
       "tt-image"
       "tt-icons";
   }
+
 }
 
 /* 平板螢幕 */
 @media (min-width: 768px) and (max-width: 1024px) {
 
-  .container {
+  .container,
+  .container-fluid {
     width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .header {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .navbar {
+    height: 120px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .navbar-brand {
     padding: 0;
   }
 
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
   .navbar-collapse {
-    display: flex;
     justify-content: flex-start;
-    background-color: white;
+    background-color: var(--text-color);
+  }
+
+  .navbar-toggler {
+    margin-right: 20px;
   }
 
   .row-ninth {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 5px;
-    border-radius: 0;
+    width: 100vw;
+    height: 60px;
     justify-content: center;
     align-items: center;
-    background-color: #2d88bbff;
     padding: 0;
+    border-radius: 0;
+    background-color: var(--secondary-color);
+    gap: 5px;
   }
 
   .row-overseas,
@@ -622,6 +664,7 @@ p {
   }
 
   .row-overseas {
+    margin-top: 120px;
     grid-template-areas:
       "title"
       "store"
@@ -630,6 +673,7 @@ p {
   }
 
   .row-N-taiwan {
+    margin-top: 30px;
     grid-template-areas:
       "title"
       "db"
@@ -644,6 +688,7 @@ p {
   }
 
   .row-M-taiwan {
+    margin-top: 30px;
     grid-template-areas:
       "title"
       "ch"
@@ -652,6 +697,7 @@ p {
   }
 
   .row-S-taiwan {
+    margin-top: 30px;
     grid-template-areas:
       "title"
       "fc"
@@ -660,7 +706,8 @@ p {
   }
 
   .row-E-taiwan {
-    margin: 0;
+    margin-top: 30px;
+    margin-bottom: 70px;
     grid-template-areas:
       "title"
       "tt"
@@ -668,55 +715,60 @@ p {
       "tt-icons";
   }
 
-  /* 桌面螢幕 */
-  @media (min-width: 1024px) {
-
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      margin-top: 190px;
-      padding: 0;
-      overflow-x: hidden;
-      font-size: 16px;
-      font-family: Josefin Sans;
-      color: #fff;
-      background-color: #1c2534;
-      box-sizing: border-box;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-    }
-
-    .container {
-      width: 95%;
-    }
-
-    .navbar {
-      height: 120px;
-      transition: height 0.3s, line-height 0.3s;
-    }
-
-    h4 {
-      font-size: 1.5vw;
-      padding: 0.4em 1em;
-      max-width: 100%;
-      min-width: 150px;
-      margin: 0px;
-      border-radius: 100px;
-      color: #ffffff;
-      line-height: 1.3;
-    }
-
-
-
-    .img-logo {
-      height: 90%;
-      transition: transform 0.3s ease;
-    }
-
-    .img-logo:hover {
-      transform: scale(1.05);
-    }
+  h2 {
+    text-align: center;
   }
+}
+
+/* 桌面螢幕 */
+@media (min-width: 1025px) {
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 190px;
+    padding: 0;
+    overflow-x: hidden;
+    font-size: 16px;
+    font-family: Josefin Sans;
+    color: #fff;
+    background-color: #1c2534;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .navbar {
+    height: 120px;
+    transition: height 0.3s, line-height 0.3s;
+  }
+
+
+
+  h4 {
+    font-size: 1.5vw;
+    padding: 0.4em 1em;
+    max-width: 100%;
+    min-width: 150px;
+    margin: 0px;
+    border-radius: 100px;
+    color: #ffffff;
+    line-height: 1.3;
+  }
+
+  .img-logo {
+    height: 90%;
+    transition: transform 0.3s ease;
+  }
+
+  .img-logo:hover {
+    transform: scale(1.05);
+  }
+}
 }
